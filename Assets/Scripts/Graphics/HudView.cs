@@ -42,5 +42,15 @@ namespace Assets.Scripts.Graphics
         {
 			scoreTxt.text = score.ToString();
         }
+
+		public void Hide()
+		{
+			gameObject.SetActive(false);
+		}
+
+		public void Show()
+		{
+			gameObject.SetActive(true);
+		}
     }
 }

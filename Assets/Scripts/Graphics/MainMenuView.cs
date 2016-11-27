@@ -13,12 +13,15 @@ namespace Assets.Scripts.Graphics
 	public class MainMenuView : MonoBehaviour
     {
         public Button startBtn;
+		public Button rankingBtn;
 
         public bool StartClicked { get; set; }
+		public bool RankingClicked { get; set; }
 
         void Awake()
         {
             startBtn.onClick.AddListener(() => StartClicked = true);
+			rankingBtn.onClick.AddListener(() => RankingClicked = true);
         }
 
         public void Hide()

@@ -12,7 +12,7 @@ namespace Assets.Scripts.Systems
     /// <summary>
     /// Menus system. Controls the game menus.
     /// </summary>
-	public class MenusSystem : NodelessSystem<MainMenu>
+	public class MenusSystem : NodelessSystem<MainMenu, Hud> 
     {
         private INodeList<WaitForStartNode> waitNodes;
         private INodeList<GameNode> gameNodes;
@@ -30,7 +30,7 @@ namespace Assets.Scripts.Systems
             asteroids = engine.GetNodes<Node<Asteroid, Entity>>();
         }
 
-        private void OnUpdate(float arg1, MainMenu menus)
+		private void OnUpdate(float arg1, MainMenu menus, Hud hud)
         {
             if (!menus.view.StartClicked)
                 return;
@@ -42,6 +42,7 @@ namespace Assets.Scripts.Systems
 
                 game.State.SetForStart();
                 menus.view.Hide();
+				hud.view.Show();
                 menus.view.StartClicked = false;
             }
         }
