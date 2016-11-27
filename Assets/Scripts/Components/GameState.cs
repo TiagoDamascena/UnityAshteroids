@@ -6,9 +6,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class GameState : MonoBehaviour
+    /// <summary>
+    /// Game state. Define the current state of the game.
+    /// </summary>
+	public class GameState : MonoBehaviour
     {
         public int lives;
+		public int score;
         public int level;
         public int hits;
         public bool playing;
@@ -16,6 +20,7 @@ namespace Assets.Scripts.Components
         public void SetForStart()
         {
             lives = 3;
+			score = 0;
             level = 0;
             hits = 0;
             playing = true;

@@ -9,7 +9,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class PlayerRespawningSystem : ISystem
+    /// <summary>
+    /// Player respawning system. Controls the respawn of the player spaceship.
+    /// </summary>
+	public class PlayerRespawningSystem : ISystem
     {
         private readonly EntityCreator _creator;
 

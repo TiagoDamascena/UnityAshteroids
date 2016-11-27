@@ -9,7 +9,10 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class EntityCreator : IEntityCreator
+    /// <summary>
+    /// Entity creator. Responsible for the entitys creation.
+    /// </summary>
+	public class EntityCreator : IEntityCreator
     {
         private readonly PrefabRepository prefabs;
 

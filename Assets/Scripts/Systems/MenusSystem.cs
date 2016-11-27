@@ -9,7 +9,10 @@ using Assets.Scripts.Nodes;
 
 namespace Assets.Scripts.Systems
 {
-    public class MenusSystem : NodelessSystem<MainMenu>
+    /// <summary>
+    /// Menus system. Controls the game menus.
+    /// </summary>
+	public class MenusSystem : NodelessSystem<MainMenu>
     {
         private INodeList<WaitForStartNode> waitNodes;
         private INodeList<GameNode> gameNodes;

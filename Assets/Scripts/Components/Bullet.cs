@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class Bullet : MonoBehaviour
+    /// <summary>
+    /// Bullet. Define a bullet of the spaceship
+    /// </summary>
+	public class Bullet : MonoBehaviour
     {
         public float maxAge = 1f;
         public float age;

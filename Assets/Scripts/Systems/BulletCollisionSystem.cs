@@ -10,7 +10,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class BulletCollisionSystem : NodelessSystem<Bullet, Collisions, Entity>
+    /// <summary>
+    /// Bullet collision system. Control the colision of the bullets.
+    /// </summary>
+	public class BulletCollisionSystem : NodelessSystem<Bullet, Collisions, Entity>
     {
         private INodeList<GameNode> _games;
 
@@ -35,10 +38,18 @@ namespace Assets.Scripts.Systems
                     continue;
 
                 asteroid.GetComponent<Hitpoints>().hp--;
-              
-                entity.Destroy();
 
-                game.State.hits++;
+				game.State.hits++;
+              	
+				if (asteroid.size == AsteroidSize.Large) {
+					game.State.score += 20;
+				} else if (asteroid.size == AsteroidSize.Medium) {
+					game.State.score += 50;
+				} else {
+					game.State.score += 100;
+				}
+
+                entity.Destroy();
             }
 
             collisions.hits.Clear();

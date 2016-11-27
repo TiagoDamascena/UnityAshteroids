@@ -9,7 +9,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class GunControlSystem : NodelessSystem<GunControls, Gun, Transform, Audio>
+    /// <summary>
+    /// Gun control system. Controls the spaceship gun.
+    /// </summary>
+	public class GunControlSystem : NodelessSystem<GunControls, Gun, Transform, Audio>
     {
         private readonly IEntityCreator _creator;
 

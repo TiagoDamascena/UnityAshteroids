@@ -10,7 +10,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class SpaceshipCollisionSystem : NodelessSystem<Spaceship, Transform, Entity, Collisions>
+    /// <summary>
+    /// Spaceship collision system. Controls the collision of the spaceship.
+    /// </summary>
+	public class SpaceshipCollisionSystem : NodelessSystem<Spaceship, Transform, Entity, Collisions>
     {
         private readonly EntityCreator _creator;
         private INodeList<GameNode> _games;

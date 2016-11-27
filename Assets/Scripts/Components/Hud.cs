@@ -7,7 +7,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class Hud : MonoBehaviour
+    /// <summary>
+    /// Hud. Define the game interface.
+    /// </summary>
+	public class Hud : MonoBehaviour
     {
         public HudView view; 
     }

@@ -8,7 +8,10 @@ using Assets.Scripts.Components;
 
 namespace Assets.Scripts.Systems
 {
-    public class HudSystem : NodelessSystem<Hud, GameState>
+    /// <summary>
+    /// Hud system. Controls the hub of the game.
+    /// </summary>
+	public class HudSystem : NodelessSystem<Hud, GameState>
     {
         public HudSystem()
         {
@@ -18,7 +21,7 @@ namespace Assets.Scripts.Systems
         private void OnUpdate(float delta, Hud hud, GameState state)
         {
             hud.view.SetLives(state.lives);
-            hud.view.SetScore(state.hits);
+			hud.view.SetScore(state.score);
         }
     }
 }

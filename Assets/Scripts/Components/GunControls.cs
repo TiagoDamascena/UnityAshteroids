@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class GunControls : MonoBehaviour
+    /// <summary>
+	/// Gun controls. Define the spaceship gun controls.
+    /// </summary>
+	public class GunControls : MonoBehaviour
     {
         public KeyCode trigger = KeyCode.Space;
         public bool isTriggering;

@@ -4,7 +4,10 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public interface IEntityCreator
+    /// <summary>
+    /// I entity creator. Interface of the entity creators.
+    /// </summary>
+	public interface IEntityCreator
     {
         void CreateGame();
         void CreateSpaceship();

@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Nodes
 {
-    public class MovementNode
+    /// <summary>
+	/// Movement node. Movements intermediary object.
+    /// </summary>
+	public class MovementNode
     {
         public Transform Transform { get; set; }
         public Rigidbody2D Rigidbody { get; set; }

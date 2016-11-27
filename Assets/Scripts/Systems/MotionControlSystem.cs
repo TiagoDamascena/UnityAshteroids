@@ -8,7 +8,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class MotionControlSystem : NodelessSystem<Rigidbody2D, MotionControl>
+    /// <summary>
+    /// Motion control system. Controls the motion of the spaceship.
+    /// </summary>
+	public class MotionControlSystem : NodelessSystem<Rigidbody2D, MotionControl>
     {
         public MotionControlSystem()
         {

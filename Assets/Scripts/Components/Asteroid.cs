@@ -6,14 +6,16 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public enum AsteroidSize
+	public enum AsteroidSize
     {
         Large,
         Medium,
-        Small,
-        Tiny
+        Small
     }
 
+	/// <summary>
+	/// Asteroid. Define an Asteroid of the game
+	/// </summary>
     public class Asteroid : MonoBehaviour
     {
         public AsteroidSize size = AsteroidSize.Large;

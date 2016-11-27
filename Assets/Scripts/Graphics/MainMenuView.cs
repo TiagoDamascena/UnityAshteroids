@@ -7,7 +7,10 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Graphics
 {
-    public class MainMenuView : MonoBehaviour
+    /// <summary>
+    /// Main menu view. Define the interface of the main menu.
+    /// </summary>
+	public class MainMenuView : MonoBehaviour
     {
         public Button startBtn;
 

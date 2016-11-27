@@ -7,7 +7,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class MainMenu : MonoBehaviour
+    /// <summary>
+    /// Main menu. Define the main menu of the game.
+    /// </summary>
+	public class MainMenu : MonoBehaviour
     {
         public MainMenuView view;
     }

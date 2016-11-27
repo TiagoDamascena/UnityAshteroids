@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class GameConfig : MonoBehaviour
+    /// <summary>
+    /// Game config. Responsible for the game configuration.
+    /// </summary>
+	public class GameConfig : MonoBehaviour
     {
         public Bounds bounds;
 

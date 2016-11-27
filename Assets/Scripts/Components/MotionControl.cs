@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class MotionControl : MonoBehaviour
+    /// <summary>
+    /// Motion control. Define the motion controls of th spaceship.
+    /// </summary>
+	public class MotionControl : MonoBehaviour
     {
         public KeyCode left = KeyCode.LeftArrow;
         public KeyCode right = KeyCode.RightArrow;

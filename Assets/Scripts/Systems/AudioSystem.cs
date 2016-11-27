@@ -8,7 +8,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class AudioSystem : NodelessSystem<Audio, Transform>
+    /// <summary>
+    /// Audio system. Control the audio of the game.
+    /// </summary>
+	public class AudioSystem : NodelessSystem<Audio, Transform>
     {
         public AudioSystem()
         {

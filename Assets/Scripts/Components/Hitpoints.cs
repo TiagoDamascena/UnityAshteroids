@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class Hitpoints : MonoBehaviour
+    /// <summary>
+    /// Hitpoints. Define a hitpoint.
+    /// </summary>
+	public class Hitpoints : MonoBehaviour
     {
         public int startingHp = 1;
         public int hp;

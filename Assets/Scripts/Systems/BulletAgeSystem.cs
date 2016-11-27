@@ -8,7 +8,10 @@ using Assets.Scripts.Components;
 
 namespace Assets.Scripts.Systems
 {
-    public class BulletAgeSystem : NodelessSystem<Bullet, Entity>
+    /// <summary>
+	/// Bullet age system. Control the bullet destruction after a time;
+    /// </summary>
+	public class BulletAgeSystem : NodelessSystem<Bullet, Entity>
     {
         public BulletAgeSystem()
         {

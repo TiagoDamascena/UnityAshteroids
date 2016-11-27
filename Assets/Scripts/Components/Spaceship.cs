@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class Spaceship : MonoBehaviour
+    /// <summary>
+    /// Spaceship. Define the spaceship.
+    /// </summary>
+	public class Spaceship : MonoBehaviour
     {
     }
 }

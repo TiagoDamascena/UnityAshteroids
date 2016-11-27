@@ -8,7 +8,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Nodes
 {
-    public class SpaceshipCollisionNode
+    /// <summary>
+	/// Spaceship collision node. Spaceship collisions intermediary object.
+    /// </summary>
+	public class SpaceshipCollisionNode
     {
         public Spaceship Spaceship { get; set; }
         public Transform Transform { get; set; }

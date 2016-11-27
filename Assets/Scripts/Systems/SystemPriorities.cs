@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Assets.Scripts.Systems
 {
-    public class SystemPriorities
+    /// <summary>
+    /// System priorities. Define the priority of the processes of the game.
+    /// </summary>
+	public class SystemPriorities
     {
         public const int PreUpdate = 1;
         public const int Update = 2;

@@ -8,7 +8,10 @@ using Assets.Scripts.Components;
 
 namespace Assets.Scripts.Systems
 {
-    public  class DeathThroesSystem : NodelessSystem<DeathThroes, Entity, Audio>
+    /// <summary>
+    /// Death throes system. Controls the death of the spaceship.
+    /// </summary>
+	public  class DeathThroesSystem : NodelessSystem<DeathThroes, Entity, Audio>
     {
         public DeathThroesSystem()
         {

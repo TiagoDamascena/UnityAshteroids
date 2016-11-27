@@ -7,7 +7,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class MovementSystem : NodelessSystem<Transform, Rigidbody2D>
+    /// <summary>
+    /// Movement system. Controls the movement of the spaceship.
+    /// </summary>
+	public class MovementSystem : NodelessSystem<Transform, Rigidbody2D>
     {
         private readonly GameConfig _config;
 

@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class Gun : MonoBehaviour
+    /// <summary>
+	/// Gun. Define the spaceship gun.
+    /// </summary>
+	public class Gun : MonoBehaviour
     {
         public bool shooting;
         public Vector2 offsetFromParent;

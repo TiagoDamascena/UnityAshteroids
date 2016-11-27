@@ -10,7 +10,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class LevelingSystem : NodelessSystem<GameState>
+    /// <summary>
+    /// Leveling system. Controls the game level progrssion.
+    /// </summary>
+	public class LevelingSystem : NodelessSystem<GameState>
     {
         private readonly EntityCreator _creator;
         private readonly GameConfig _config;

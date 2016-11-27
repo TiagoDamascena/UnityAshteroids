@@ -6,7 +6,10 @@ using System.Text;
 
 namespace Assets.Scripts.Nodes
 {
-    public class GameNode
+    /// <summary>
+	/// Game node. Game Control intermediary object.
+    /// </summary>
+	public class GameNode
     {
         public GameState State { get; set; }
     }

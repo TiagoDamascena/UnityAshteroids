@@ -9,7 +9,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
-    public class AsteroidSplittingSystem : NodelessSystem<Asteroid, Transform, Hitpoints, Entity, Rigidbody2D>
+    /// <summary>
+    /// Asteroid splitting system. Control the asteroids split.
+    /// </summary>
+	public class AsteroidSplittingSystem : NodelessSystem<Asteroid, Transform, Hitpoints, Entity, Rigidbody2D>
     {
         private readonly EntityCreator _creator;
 
@@ -33,7 +36,7 @@ namespace Assets.Scripts.Systems
 
         private void SplitAsteroid(Asteroid asteroid, Rigidbody2D rigidbody, Transform transform)
         {
-            if (asteroid.size == AsteroidSize.Tiny)
+			if (asteroid.size == AsteroidSize.Small)
                 return;
 
             var newSize = GetSplitSize(asteroid.size);
@@ -69,17 +72,13 @@ namespace Assets.Scripts.Systems
         {
             if (size == AsteroidSize.Medium)
                 return AsteroidSize.Small;
-            else if (size == AsteroidSize.Small)
-                return AsteroidSize.Tiny;
             else
                 return AsteroidSize.Medium;
         }
 
         private float GetForceMultiplier(AsteroidSize size)
         {
-            if (size == AsteroidSize.Tiny)
-                return 0.1f;
-            else if (size == AsteroidSize.Small)
+            if (size == AsteroidSize.Small)
                 return 0.2f;
             else
                 return 0.5f;

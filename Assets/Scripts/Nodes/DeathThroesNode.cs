@@ -6,7 +6,10 @@ using System.Text;
 
 namespace Assets.Scripts.Nodes
 {
-    public class DeathThroesNode
+    /// <summary>
+	/// Death throes node. Death intermediary object.
+    /// </summary>
+	public class DeathThroesNode
     {
         public DeathThroes Death { get; set; }
         public Audio Audio { get; set; }

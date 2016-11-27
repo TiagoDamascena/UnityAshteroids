@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
-    public class Collisions : MonoBehaviour
+    /// <summary>
+    /// Collisions. Store the collisions of a 2d object.
+    /// </summary>
+	public class Collisions : MonoBehaviour
     {
         public List<Collision2D> hits = new List<Collision2D>();
 

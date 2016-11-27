@@ -7,7 +7,10 @@ using Ash.Core;
 
 namespace Assets.Scripts.Nodes
 {
-    public class WaitForStartNode
+    /// <summary>
+	/// Wait for start node. Game start intermediary object.
+    /// </summary>
+	public class WaitForStartNode
     {
         public Entity Entity { get; set; }
         public MainMenu Wait { get; set; }

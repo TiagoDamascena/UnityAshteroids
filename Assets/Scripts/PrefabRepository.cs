@@ -7,7 +7,10 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class PrefabRepository : MonoBehaviour
+    /// <summary>
+    /// Prefab repository. Responsible for store prefabs.
+    /// </summary>
+	public class PrefabRepository : MonoBehaviour
     {
         public GameObject waitForClick;
         public GameObject game;
@@ -15,7 +18,6 @@ namespace Assets.Scripts
         public GameObject asteroidLarge;
         public GameObject asteroidMedium;
         public GameObject asteroidSmall;
-        public GameObject asteroidTiny;
         public GameObject playerBullet;
         public GameObject asteroidInDeathroes;
         public GameObject spaceshipDeathroes;
@@ -26,9 +28,7 @@ namespace Assets.Scripts
                 return asteroidLarge;
             if (size == AsteroidSize.Medium)
                 return asteroidMedium;
-            if (size == AsteroidSize.Small)
-                return asteroidSmall;
-            return asteroidTiny;
+            return asteroidSmall;
         }
     }
 }
