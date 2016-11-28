@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86faa6fcbffa0a4db74ce9cb7d68302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAge: 1
+  maxAge: 1.5
   age: 0
 --- !u!114 &11400004
 MonoBehaviour:

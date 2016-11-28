@@ -80,7 +80,7 @@ namespace Assets.Scripts.Systems
                 position = new Vector2(UnityEngine.Random.Range(_config.bounds.min.x, _config.bounds.max.x),
                     UnityEngine.Random.Range(_config.bounds.min.y, _config.bounds.max.y));
             }
-            while (Vector2.Distance(position, spaceship.Transform.position) <= 1);
+            while (Vector2.Distance(position, spaceship.Transform.position) <= 2);
             return position;
         }
 

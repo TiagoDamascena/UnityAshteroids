@@ -76,7 +76,7 @@ namespace Assets.Scripts.Systems
         private bool IsClearToAddShip(Vector2 newSpaceshipPosition)
         {
             foreach (var asteroid in _asteroids)
-                if (Vector2.Distance(asteroid.Component2.position, newSpaceshipPosition) <= 2f)
+                if (Vector2.Distance(asteroid.Component2.position, newSpaceshipPosition) <= 3)
                     return false;
 
             return true;
