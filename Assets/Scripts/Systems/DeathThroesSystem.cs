@@ -19,6 +19,12 @@ namespace Assets.Scripts.Systems
             _nodeAddedCallback = OnNodeAdded;
         }
 
+		/// <summary>
+		/// On this node is the added.
+		/// </summary>
+		/// <param name="death">Death.</param>
+		/// <param name="entity">Entity.</param>
+		/// <param name="audio">Audio.</param>
         private void OnNodeAdded(DeathThroes death, Entity entity, Audio audio)
         {
             audio.Play(death.deathSound);

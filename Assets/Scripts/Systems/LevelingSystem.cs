@@ -30,6 +30,10 @@ namespace Assets.Scripts.Systems
             _addedToEngineCallback = OnAddedToEngine;
         }
 
+		/// <summary>
+		/// On this system is added to engine event.
+		/// </summary>
+		/// <param name="engine">Engine.</param>
         private void OnAddedToEngine(IEngine engine)
         {
             asteroids = engine.GetNodes<Node<Asteroid>>();
@@ -43,11 +47,19 @@ namespace Assets.Scripts.Systems
                 NextLevel(state);
         }
 
+		/// <summary>
+		/// Determines whether this instance is ready for next level.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is ready for next level; otherwise, <c>false</c>.</returns>
         private bool IsReadyForNextLevel()
         {
             return !asteroids.Any() && !bullets.Any() && spaceships.Any();
         }
 
+		/// <summary>
+		/// Nexts the level.
+		/// </summary>
+		/// <param name="state">State.</param>
         private void NextLevel(GameState state)
         {
             state.level++;
@@ -57,6 +69,9 @@ namespace Assets.Scripts.Systems
                 SpawnAsteroid();
         }
 
+		/// <summary>
+		/// Spawns the asteroid.
+		/// </summary>
         private void SpawnAsteroid()
         {
             var spaceship = spaceships.First();
@@ -72,6 +87,11 @@ namespace Assets.Scripts.Systems
             rigidBody.AddTorque(torque, ForceMode2D.Impulse);
         }
 
+		/// <summary>
+		/// Finds the position for new asteroid.
+		/// </summary>
+		/// <returns>The position for new asteroid.</returns>
+		/// <param name="spaceship">Spaceship.</param>
         private Vector2 FindPositionForNewAsteroid(SpaceshipNode spaceship)
         {
             Vector2 position;

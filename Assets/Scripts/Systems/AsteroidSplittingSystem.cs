@@ -34,6 +34,12 @@ namespace Assets.Scripts.Systems
             entity.Destroy();
         }
 
+		/// <summary>
+		/// Splits the asteroid.
+		/// </summary>
+		/// <param name="asteroid">Asteroid.</param>
+		/// <param name="rigidbody">Rigidbody.</param>
+		/// <param name="transform">Transform.</param>
         private void SplitAsteroid(Asteroid asteroid, Rigidbody2D rigidbody, Transform transform)
         {
 			if (asteroid.size == AsteroidSize.Small)
@@ -45,6 +51,12 @@ namespace Assets.Scripts.Systems
             CreatePerpendicularAsteroids(transform, velNormal, newSize);
         }
 
+		/// <summary>
+		/// Creates the perpendicular asteroids.
+		/// </summary>
+		/// <param name="transform">Transform.</param>
+		/// <param name="velNormal">Vel normal.</param>
+		/// <param name="newSize">New size.</param>
         private void CreatePerpendicularAsteroids(Transform transform, Vector2 velNormal, AsteroidSize newSize)
         {
             var perp = new Vector2(-velNormal.y, velNormal.x);
@@ -56,6 +68,12 @@ namespace Assets.Scripts.Systems
             CreateChildAsteroid(dir, transform.position, newSize);
         }
 
+		/// <summary>
+		/// Creates the child asteroid.
+		/// </summary>
+		/// <param name="dir">Dir.</param>
+		/// <param name="asteroidPos">Asteroid position.</param>
+		/// <param name="newSize">New size.</param>
         private void CreateChildAsteroid(Vector2 dir, Vector2 asteroidPos, AsteroidSize newSize)
         {
             var pos = new Vector3(asteroidPos.x + dir.x, asteroidPos.y + dir.y);
@@ -68,6 +86,11 @@ namespace Assets.Scripts.Systems
             rb.AddTorque(force.x * multiplier * multiplier, ForceMode2D.Impulse);           
         }
 
+		/// <summary>
+		/// Gets the size of the split.
+		/// </summary>
+		/// <returns>The split size.</returns>
+		/// <param name="size">Size.</param>
         private AsteroidSize GetSplitSize(AsteroidSize size)
         {
             if (size == AsteroidSize.Medium)
@@ -76,6 +99,11 @@ namespace Assets.Scripts.Systems
                 return AsteroidSize.Medium;
         }
 
+		/// <summary>
+		/// Gets the force multiplier.
+		/// </summary>
+		/// <returns>The force multiplier.</returns>
+		/// <param name="size">Size.</param>
         private float GetForceMultiplier(AsteroidSize size)
         {
             if (size == AsteroidSize.Small)

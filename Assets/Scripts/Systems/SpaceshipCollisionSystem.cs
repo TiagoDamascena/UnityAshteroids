@@ -18,6 +18,10 @@ namespace Assets.Scripts.Systems
         private readonly EntityCreator _creator;
         private INodeList<GameNode> _games;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Assets.Scripts.Systems.SpaceshipCollisionSystem"/> class.
+		/// </summary>
+		/// <param name="creator">Creator.</param>
         public SpaceshipCollisionSystem(EntityCreator creator)
         {
             _creator = creator;
@@ -25,11 +29,23 @@ namespace Assets.Scripts.Systems
             _addedToEngineCallback = OnAddedToEngine;
         }
 
+		/// <summary>
+		/// Raises the added to engine event.
+		/// </summary>
+		/// <param name="engine">Engine.</param>
         private void OnAddedToEngine(IEngine engine)
         {
             _games = engine.GetNodes<GameNode>();
         }
 
+		/// <summary>
+		/// Raises the update event.
+		/// </summary>
+		/// <param name="arg1">Arg1.</param>
+		/// <param name="spaceship">Spaceship.</param>
+		/// <param name="transform">Transform.</param>
+		/// <param name="entity">Entity.</param>
+		/// <param name="collisions">Collisions.</param>
         private void OnUpdate(float arg1, Spaceship spaceship, Transform transform, 
             Entity entity, Collisions collisions)
         {

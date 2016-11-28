@@ -22,6 +22,11 @@ namespace Assets.Scripts
         public GameObject asteroidInDeathroes;
         public GameObject spaceshipDeathroes;
 
+		/// <summary>
+		/// Creates a new asteroid of an specific size.
+		/// </summary>
+		/// <returns>The asteroid.</returns>
+		/// <param name="size">Size of the asteroid.</param>
         public GameObject GetAsteroid(AsteroidSize size)
         {
             if (size == AsteroidSize.Large)

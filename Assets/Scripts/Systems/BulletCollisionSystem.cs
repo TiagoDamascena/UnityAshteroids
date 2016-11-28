@@ -23,6 +23,10 @@ namespace Assets.Scripts.Systems
             _addedToEngineCallback = OnAddedToEngine;
         }
 
+		/// <summary>
+		/// On this node added to engine event.
+		/// </summary>
+		/// <param name="engine">Engine.</param>
         private void OnAddedToEngine(IEngine engine)
         {
             _games = engine.GetNodes<GameNode>();

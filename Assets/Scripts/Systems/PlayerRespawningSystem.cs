@@ -22,11 +22,19 @@ namespace Assets.Scripts.Systems
         private INodeList<Node<MainMenu>> _mainMenus;
 		private INodeList<Node<HighScore>> _highScore;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Assets.Scripts.Systems.PlayerRespawningSystem"/> class.
+		/// </summary>
+		/// <param name="creator">Creator.</param>
         public PlayerRespawningSystem(EntityCreator creator)
         {
             _creator = creator;
         }
 
+		/// <summary>
+		/// On this system is added to engine.
+		/// </summary>
+		/// <param name="engine">Engine.</param>
         public void AddedToEngine(IEngine engine)
         {
             _gameNodes = engine.GetNodes<GameNode>();
@@ -36,6 +44,10 @@ namespace Assets.Scripts.Systems
 			_highScore = engine.GetNodes<Node<HighScore>> ();
         }
 
+		/// <summary>
+		/// On this system is removed from engine.
+		/// </summary>
+		/// <param name="engine">Engine.</param>
         public void RemovedFromEngine(IEngine engine)
         {
         }
@@ -52,6 +64,10 @@ namespace Assets.Scripts.Systems
             }
         }
 
+		/// <summary>
+		/// Respawns the player.
+		/// </summary>
+		/// <param name="game">Game.</param>
         private void RespawnPlayer(GameNode game)
         {
             if (game.State.lives > 0)
@@ -73,6 +89,11 @@ namespace Assets.Scripts.Systems
             }
         }
 
+		/// <summary>
+		/// Determines whether this instance is clear to add ship the specified position.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is clear to add ship the specified newSpaceshipPosition; otherwise, <c>false</c>.</returns>
+		/// <param name="newSpaceshipPosition">New spaceship position.</param>
         private bool IsClearToAddShip(Vector2 newSpaceshipPosition)
         {
             foreach (var asteroid in _asteroids)

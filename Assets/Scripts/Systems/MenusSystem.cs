@@ -24,6 +24,10 @@ namespace Assets.Scripts.Systems
             _updateCallback = OnUpdate;
         }
 
+		/// <summary>
+		/// On this system is added to engine.
+		/// </summary>
+		/// <param name="engine">Engine.</param>
         private void OnAddedToEngine(IEngine engine)
         {
             gameNodes = engine.GetNodes<GameNode>();

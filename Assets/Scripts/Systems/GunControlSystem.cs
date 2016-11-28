@@ -31,6 +31,12 @@ namespace Assets.Scripts.Systems
                 Shoot(gun, transform, audio);
         }
 
+		/// <summary>
+		/// Shoot the specified gun.
+		/// </summary>
+		/// <param name="gun">Gun.</param>
+		/// <param name="transform">Transform.</param>
+		/// <param name="audio">Audio.</param>
         private void Shoot(Gun gun, Transform transform, Audio audio)
         {
             _creator.CreateUserBullet(gun, transform);
@@ -38,6 +44,11 @@ namespace Assets.Scripts.Systems
             gun.timeSinceLastShot = 0;
         }
 
+		/// <summary>
+		/// Determines whether this instance can shoot the specified gun.
+		/// </summary>
+		/// <returns><c>true</c> if this instance can shoot the specified gun; otherwise, <c>false</c>.</returns>
+		/// <param name="gun">Gun.</param>
         private bool CanShoot(Gun gun)
         {
             return gun.shooting && gun.timeSinceLastShot >= gun.minimumShotInterval;
