@@ -20,6 +20,7 @@ namespace Assets.Scripts.Systems
         private INodeList<Node<Asteroid, Transform>> _asteroids;
         private INodeList<SpaceshipNode> _spaceships;
         private INodeList<Node<MainMenu>> _mainMenus;
+		private INodeList<Node<HighScore>> _highScore;
 
         public PlayerRespawningSystem(EntityCreator creator)
         {
@@ -32,6 +33,7 @@ namespace Assets.Scripts.Systems
             _asteroids = engine.GetNodes<Node<Asteroid, Transform>>();
             _spaceships = engine.GetNodes<SpaceshipNode>();
             _mainMenus = engine.GetNodes<Node<MainMenu>>();
+			_highScore = engine.GetNodes<Node<HighScore>> ();
         }
 
         public void RemovedFromEngine(IEngine engine)
@@ -60,14 +62,21 @@ namespace Assets.Scripts.Systems
             else
             {
                 game.State.playing = false;
-                _mainMenus.First().Component1.view.Show();
+				if (game.State.score >int.Parse(_highScore.First ().Component1.view.score.text)) {
+					_highScore.First ().Component1.view.score.text = game.State.score.ToString ();
+					_highScore.First ().Component1.view.name.text = "";
+					_highScore.First ().Component1.view.Show ();
+				} else {
+					_highScore.First ().Component1.view.Hide ();
+					_mainMenus.First().Component1.view.Show();
+				}
             }
         }
 
         private bool IsClearToAddShip(Vector2 newSpaceshipPosition)
         {
             foreach (var asteroid in _asteroids)
-                if (Vector2.Distance(asteroid.Component2.position, newSpaceshipPosition) <= 1f)
+                if (Vector2.Distance(asteroid.Component2.position, newSpaceshipPosition) <= 2f)
                     return false;
 
             return true;
